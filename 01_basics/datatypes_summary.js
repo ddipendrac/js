@@ -29,3 +29,34 @@ const myFunc = function(){
 }
 
 console.log(typeof myFunc);
+
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//+++++++MEMPRY+++++++
+
+// Stack (Primitive: number, string), Heap (Non-Primitive: array, object)
+
+// Stack: When we change second, we do not change first
+let myCountryName = "Nepal"
+
+let anotherCountry = myCountryName
+anotherCountry = "Australia"
+console.log(myCountryName); // Nepal
+console.log(anotherCountry); // Australia
+
+// Heap: When we change in second; original gets changed
+let userOne = {
+    email: "user@google.com",
+    age: 20
+}
+
+let userTwo = userOne
+userTwo.email = "dipendra@google.com"
+
+console.log(userOne.email); // dipendra@google.com
+console.log(userTwo.email); // dipendra@google.com
+
+
