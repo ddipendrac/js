@@ -27,7 +27,7 @@ const obj3 = {5: "c", 6: "d"}
 // const obj4 = Object.assign({}, obj1, obj2, obj3) // Here {} is target obj where all other source obj will be merged, otherwise all will go to obj1
 
 const obj4 = {...obj1, ...obj2, ...obj3} // Merge using spread operator
-console.log(obj4);
+// console.log(obj4);
 
 const users = [
     {
@@ -47,7 +47,31 @@ const users = [
 users[1].email // access object element from array
 
 
-console.log(Object.keys(tinderUserTwo)); // get all keys of an object in array
-console.log(Object.values(tinderUserTwo)); // Get all values of an object in array
+// console.log(Object.keys(tinderUserTwo)); // get all keys of an object in array
+// console.log(Object.values(tinderUserTwo)); // Get all values of an object in array
   
-console.log(tinderUserTwo.hasOwnProperty('isLoggedIn')); // Check if exist
+// console.log(tinderUserTwo.hasOwnProperty('isLoggedIn')); // Check if exist
+
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+
+const {courseInstructor: instructor} = course // Destructuring the value 
+
+console.log(instructor);
+
+// {
+//     "name": "hitesh",
+//     "courseName": "js in hindi",
+//     "price": "free"
+// }
+
+
+[
+    {},
+    {},
+    {}
+]
