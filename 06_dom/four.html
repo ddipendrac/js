@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add list</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li =document.createElement('li')
+        li.innerHTML = `${langName}` // Not prefered, because for big list it reads all and consumes time
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    addLanguage("Python")
+
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li')
+        // const createText = document.createTextNode(langName)
+        // li.appendChild(createText)
+
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }    
+    addOptiLanguage("Golang")
+
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo" // Not optimized
+    secondLang.replaceWith(newli)
+
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</>'
+
+        //remove
+        const lastLang = document.querySelector("li:last-child")
+        lastLang.remove()
+
+</script>
+</html>
