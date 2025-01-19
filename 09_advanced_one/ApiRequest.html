@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Api Request</title>
+</head>
+<body>
+    <div class="card">
+        <img class="avatar" src="" alt="avatar">
+        <div class="description">
+            <div class="name"></div>
+            <div class="followers"> </div>
+        </div>
+    </div>
+</body>
+<script>
+    const avatar = document.querySelector('.avatar')
+    const name = document.querySelector('.name')
+    const followers = document.querySelector('.followers')
+    const requestUrl =  'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            
+            const data = JSON.parse(this.responseText) // change string to object
+            avatar.src = data.avatar_url
+            name.innerText = data.name
+            followers.innerText = data.followers
+            // console.log(data);
+            // console.log(data.avatar_url);
+            
+            // console.log(data.followers);
+            
+        }
+    }
+    
+    xhr.send()
+
+
+</script>
+</html>
